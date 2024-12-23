@@ -1,3 +1,3 @@
-# [Cops and Robbers](https://github.com/Ben-Aharoni)
+# Cops and Robbers
 
 Author: [Ben-Aharoni](https://github.com/Ben-Aharoni)
