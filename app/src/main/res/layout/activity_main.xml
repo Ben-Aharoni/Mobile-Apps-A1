@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cops_and_robbers"
+    tools:context=".MainActivity"
+    >
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:textSize="@dimen/Score_dimens"
+        android:textStyle="bold"
+        tools:text="000" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_HEARTS_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_heart0"
+            android:layout_width="@dimen/Lives_dimens"
+            android:layout_height="@dimen/Lives_dimens"
+            android:layout_marginEnd="4dp"
+            app:srcCompat="@drawable/heart" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_heart1"
+            android:layout_width="@dimen/Lives_dimens"
+            android:layout_height="@dimen/Lives_dimens"
+            android:layout_marginEnd="4dp"
+            app:srcCompat="@drawable/heart" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_heart2"
+            android:layout_width="@dimen/Lives_dimens"
+            android:layout_height="@dimen/Lives_dimens"
+            app:srcCompat="@drawable/heart" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <GridLayout
+        android:id="@+id/main_GRID_obstacles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_HEARTS_position"
+        android:layout_above="@id/main_FAB_LeftArrow"
+        android:background="@drawable/cops_and_robbers"
+        android:columnCount="3"
+        android:rowCount="10"
+        android:useDefaultMargins="true"
+        tools:context=".MainActivity">
+
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop3"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop5"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop8"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="5"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop11"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop14"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_thief_middle"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="8"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/thief" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_thief_left"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="8"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/thief" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop2"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop1"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="3"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop4"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop7"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="5"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop10"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop13"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop6"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop9"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="5"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop12"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop15"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_thief_right"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="8"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/thief" />
+    </GridLayout>
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/main_FAB_RightArrow"
+        app:shapeAppearance="oval"
+        android:layout_width="@dimen/obstacle_dimens"
+        android:layout_height="@dimen/obstacle_dimens"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/default_margin"
+        android:backgroundTint="@color/blue"
+        android:text="@string/RightArrow"
+        android:textColor="@color/black"
+        android:textSize="@dimen/Arrow_Size"
+
+        />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/main_FAB_LeftArrow"
+        app:shapeAppearance="oval"
+        android:layout_width="@dimen/obstacle_dimens"
+        android:layout_height="@dimen/obstacle_dimens"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/default_margin"
+        android:backgroundTint="@color/blue"
+        android:text="@string/LeftArrow"
+        android:textColor="@color/black"
+        android:textSize="@dimen/Arrow_Size" />
+
+</RelativeLayout>
