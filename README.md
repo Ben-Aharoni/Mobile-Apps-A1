@@ -1,3 +1,3 @@
 # Cops and Robbers
 
-Author: [@Ben-Aharoni]
+Author: Ben-Aharoni
