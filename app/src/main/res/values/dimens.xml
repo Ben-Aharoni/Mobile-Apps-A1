@@ -7,4 +7,5 @@
     <dimen name="obstacle_dimens">80dp</dimen>
     <dimen name="Lives_dimens">40dp</dimen>
     <dimen name="Score_dimens">40sp</dimen>
+    <dimen name="score_margin_top">5dp</dimen>
 </resources>

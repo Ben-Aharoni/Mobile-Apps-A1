@@ -48,30 +48,48 @@ class MainActivity : AppCompatActivity() {
         thief = arrayOf(
             findViewById(R.id.main_IMG_thief_left),
             findViewById(R.id.main_IMG_thief_middle),
-            findViewById(R.id.main_IMG_thief_right)
+            findViewById(R.id.main_IMG_thief_right),
+            findViewById(R.id.main_IMG_thief_right1),
+            findViewById(R.id.main_IMG_thief_right2)
         )
 
         cops = arrayOf(
             arrayOf(
+                findViewById(R.id.main_IMG_cop26),
+                findViewById(R.id.main_IMG_cop27),
+                findViewById(R.id.main_IMG_cop28),
+                findViewById(R.id.main_IMG_cop29),
+                findViewById(R.id.main_IMG_cop30)
+            ), arrayOf(
                 findViewById(R.id.main_IMG_cop1),
                 findViewById(R.id.main_IMG_cop2),
-                findViewById(R.id.main_IMG_cop3)
+                findViewById(R.id.main_IMG_cop3),
+                findViewById(R.id.main_IMG_cop16),
+                findViewById(R.id.main_IMG_cop21)
             ), arrayOf(
                 findViewById(R.id.main_IMG_cop4),
                 findViewById(R.id.main_IMG_cop5),
-                findViewById(R.id.main_IMG_cop6)
+                findViewById(R.id.main_IMG_cop6),
+                findViewById(R.id.main_IMG_cop17),
+                findViewById(R.id.main_IMG_cop22)
             ), arrayOf(
                 findViewById(R.id.main_IMG_cop7),
                 findViewById(R.id.main_IMG_cop8),
-                findViewById(R.id.main_IMG_cop9)
+                findViewById(R.id.main_IMG_cop9),
+                findViewById(R.id.main_IMG_cop18),
+                findViewById(R.id.main_IMG_cop23)
             ), arrayOf(
                 findViewById(R.id.main_IMG_cop10),
                 findViewById(R.id.main_IMG_cop11),
-                findViewById(R.id.main_IMG_cop12)
+                findViewById(R.id.main_IMG_cop12),
+                findViewById(R.id.main_IMG_cop19),
+                findViewById(R.id.main_IMG_cop24)
             ), arrayOf(
                 findViewById(R.id.main_IMG_cop13),
                 findViewById(R.id.main_IMG_cop14),
-                findViewById(R.id.main_IMG_cop15)
+                findViewById(R.id.main_IMG_cop15),
+                findViewById(R.id.main_IMG_cop20),
+                findViewById(R.id.main_IMG_cop25)
             )
         )
     }
@@ -86,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateScoreUI(newScore: Int) {
         runOnUiThread {
-            main_LBL_score.text = newScore.toString() // Safely update UI
+            main_LBL_score.text = newScore.toString()
         }
     }
 

@@ -18,7 +18,7 @@ class GameManager(
     var score: Int = 0
         private set
 
-    private var thiefPosition = 1
+    private var thiefPosition = 2
 
     private var lives = 3
 
@@ -90,7 +90,7 @@ class GameManager(
 
 
     fun moveThiefRight() {
-        if (!gameOver && thiefPosition < 2) {
+        if (!gameOver && thiefPosition < 4) {
             thief[thiefPosition].visibility = View.INVISIBLE
             thiefPosition++
             thief[thiefPosition].visibility = View.VISIBLE
@@ -113,7 +113,6 @@ class GameManager(
         }
         handler.post(gameLoopRunnable)
     }
-
 
     private fun moveCopsDown() {
         for (row in cops.indices.reversed()) {
