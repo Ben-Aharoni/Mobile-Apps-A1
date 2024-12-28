@@ -1,20 +1,25 @@
 package com.example.hw1
 
+import android.content.Context
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.hw1.utilities.SignalManager
+import com.example.hw1.utilities.SoundPlayer
 import com.google.android.material.textview.MaterialTextView
 import kotlin.random.Random
 
 class GameManager(
+    private val context: Context,
     private val thief: Array<ImageView>,
     private val cops: Array<Array<ImageView>>,
     private val hearts: Array<AppCompatImageView>,
     private val onGameOver: () -> Unit,
     private val onScoreUpdated: (Int) -> Unit
 ) {
+    private val soundPlayer = SoundPlayer(context)
+
     var score: Int = 0
         private set
 
@@ -137,6 +142,7 @@ class GameManager(
 
 
     private fun handleCollision() {
+        soundPlayer.playSound(R.raw.boom_sound)
         lives--
         updateScore(-20)
         toastAndVibrate()
@@ -164,6 +170,10 @@ class GameManager(
             score = 0
         }
         onScoreUpdated(score)
+    }
+
+    fun releaseResources() {
+        soundPlayer.release()
     }
 }
 

@@ -95,7 +95,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initGameManager() {
-        gameManager = GameManager(thief = thief,
+        gameManager = GameManager(
+            context = this,
+            thief = thief,
             cops = cops,
             hearts = hearts,
             onGameOver = { resetGame() },
@@ -126,6 +128,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun resetGame() {
         gameManager.resetGame()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        gameManager.releaseResources()
     }
 }
 
