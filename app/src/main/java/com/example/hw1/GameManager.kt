@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.hw1.utilities.SignalManager
-import com.example.hw1.utilities.SoundPlayer
+import com.example.hw1.utilities.SingleSoundPlayer
 import com.google.android.material.textview.MaterialTextView
 import kotlin.random.Random
 
@@ -14,11 +14,13 @@ class GameManager(
     private val context: Context,
     private val thief: Array<ImageView>,
     private val cops: Array<Array<ImageView>>,
+    private val coins: Array<Array<ImageView>>,
     private val hearts: Array<AppCompatImageView>,
     private val onGameOver: () -> Unit,
     private val onScoreUpdated: (Int) -> Unit
 ) {
-    private val soundPlayer = SoundPlayer(context)
+
+    private val singleSoundPlayer = SingleSoundPlayer(context)
 
     var score: Int = 0
         private set
@@ -42,7 +44,9 @@ class GameManager(
         resetScore()
         resetThief()
         resetCops()
+        resetCoins()
         placeCopsRandomly()
+        placeCoinsRandomly()
     }
 
 
@@ -69,6 +73,14 @@ class GameManager(
         }
     }
 
+    private fun resetCoins() {
+        for (row in coins) {
+            for (coin in row) {
+                coin.visibility = View.INVISIBLE
+            }
+        }
+    }
+
     private fun resetScore() {
         score = 0
         onScoreUpdated(score)
@@ -77,6 +89,15 @@ class GameManager(
 
     private fun placeCopsRandomly() {
         val firstRow = cops[0]
+        for (i in firstRow.indices) {
+            firstRow[i].visibility = View.INVISIBLE
+        }
+        val randomIndex = Random.nextInt(firstRow.size)
+        firstRow[randomIndex].visibility = View.VISIBLE
+    }
+
+    private fun placeCoinsRandomly() {
+        val firstRow = coins[0]
         for (i in firstRow.indices) {
             firstRow[i].visibility = View.INVISIBLE
         }
@@ -109,9 +130,10 @@ class GameManager(
             override fun run() {
                 if (!gameOver) {
                     moveCopsDown()
+                    moveCoinsDown()
                     placeCopsRandomly()
+                    placeCoinsRandomly()
                     checkCollisions()
-                    updateScore(10)
                     handler.postDelayed(this, 1000)
                 }
             }
@@ -133,18 +155,35 @@ class GameManager(
         }
     }
 
+    private fun moveCoinsDown() {
+        for (row in coins.indices.reversed()) {
+            for (col in coins[row].indices) {
+                val coin = coins[row][col]
+                if (coin.visibility == View.VISIBLE) {
+                    coin.visibility = View.INVISIBLE
+                    if (row + 1 < coins.size) {
+                        coins[row + 1][col].visibility = View.VISIBLE
+                    }
+                }
+            }
+        }
+    }
+
 
     private fun checkCollisions() {
         if (cops.last()[thiefPosition].visibility == View.VISIBLE) {
             handleCollision()
         }
+        if (coins.last()[thiefPosition].visibility == View.VISIBLE) {
+            coinCollected()
+        }
     }
 
 
     private fun handleCollision() {
-        soundPlayer.playSound(R.raw.boom_sound)
+        //singleSoundPlayer.playSound(R.raw.boom_sound)
         lives--
-        updateScore(-20)
+        updateScore(-50)
         toastAndVibrate()
         hearts[lives].visibility = View.INVISIBLE
         if (lives == 0) {
@@ -159,9 +198,17 @@ class GameManager(
             SignalManager.getInstance().toast("Game Over your score is : " + score)
             SignalManager.getInstance().vibrate()
         } else {
-            SignalManager.getInstance().toast("collision!")
+            SignalManager.getInstance().toast("Collision! -50")
             SignalManager.getInstance().vibrate()
         }
+    }
+
+    private fun coinCollected() {
+        //singleSoundPlayer.playSound(R.raw.coin_sound)
+        updateScore(100)
+        SignalManager.getInstance().toast("Coin Collected! +100")
+        SignalManager.getInstance().vibrate()
+
     }
 
     private fun updateScore(points: Int) {
@@ -170,10 +217,6 @@ class GameManager(
             score = 0
         }
         onScoreUpdated(score)
-    }
-
-    fun releaseResources() {
-        soundPlayer.release()
     }
 }
 

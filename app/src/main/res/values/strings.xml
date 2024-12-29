@@ -2,4 +2,5 @@
     <string name="app_name">HW1</string>
     <string name="LeftArrow"><![CDATA[<]]></string>
     <string name="RightArrow"><![CDATA[>]]></string>
+    <string name="game_title">Cops And Robbers</string>
 </resources>

@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var cops: Array<Array<ImageView>>
 
+    private lateinit var coins: Array<Array<ImageView>>
+
     private lateinit var gameManager: GameManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,11 +48,11 @@ class MainActivity : AppCompatActivity() {
         rightArrow = findViewById(R.id.main_FAB_RightArrow)
 
         thief = arrayOf(
-            findViewById(R.id.main_IMG_thief_left),
-            findViewById(R.id.main_IMG_thief_middle),
-            findViewById(R.id.main_IMG_thief_right),
-            findViewById(R.id.main_IMG_thief_right1),
-            findViewById(R.id.main_IMG_thief_right2)
+            findViewById(R.id.main_IMG_thief_1),
+            findViewById(R.id.main_IMG_thief_2),
+            findViewById(R.id.main_IMG_thief_3),
+            findViewById(R.id.main_IMG_thief_4),
+            findViewById(R.id.main_IMG_thief_5)
         )
 
         cops = arrayOf(
@@ -92,6 +94,46 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_IMG_cop25)
             )
         )
+
+        coins = arrayOf(
+            arrayOf(
+                findViewById(R.id.main_IMG_coin1),
+                findViewById(R.id.main_IMG_coin2),
+                findViewById(R.id.main_IMG_coin3),
+                findViewById(R.id.main_IMG_coin4),
+                findViewById(R.id.main_IMG_coin5)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_coin6),
+                findViewById(R.id.main_IMG_coin7),
+                findViewById(R.id.main_IMG_coin8),
+                findViewById(R.id.main_IMG_coin9),
+                findViewById(R.id.main_IMG_coin10)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_coin11),
+                findViewById(R.id.main_IMG_coin12),
+                findViewById(R.id.main_IMG_coin13),
+                findViewById(R.id.main_IMG_coin14),
+                findViewById(R.id.main_IMG_coin15)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_coin16),
+                findViewById(R.id.main_IMG_coin17),
+                findViewById(R.id.main_IMG_coin18),
+                findViewById(R.id.main_IMG_coin19),
+                findViewById(R.id.main_IMG_coin20)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_coin21),
+                findViewById(R.id.main_IMG_coin22),
+                findViewById(R.id.main_IMG_coin23),
+                findViewById(R.id.main_IMG_coin24),
+                findViewById(R.id.main_IMG_coin25)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_coin26),
+                findViewById(R.id.main_IMG_coin27),
+                findViewById(R.id.main_IMG_coin28),
+                findViewById(R.id.main_IMG_coin29),
+                findViewById(R.id.main_IMG_coin30)
+            )
+        )
     }
 
     private fun initGameManager() {
@@ -99,6 +141,7 @@ class MainActivity : AppCompatActivity() {
             context = this,
             thief = thief,
             cops = cops,
+            coins = coins,
             hearts = hearts,
             onGameOver = { resetGame() },
             onScoreUpdated = { newScore -> updateScoreUI(newScore) })
