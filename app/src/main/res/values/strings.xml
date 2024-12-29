@@ -3,4 +3,7 @@
     <string name="LeftArrow"><![CDATA[<]]></string>
     <string name="RightArrow"><![CDATA[>]]></string>
     <string name="game_title">Cops And Robbers</string>
+    <string name="sensors_switch_text">sensors</string>
+    <string name="buttons_switch_text">buttons</string>
+    <string name="game_mode_switch_text">Game Mode</string>
 </resources>
