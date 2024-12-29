@@ -172,10 +172,5 @@ class MainActivity : AppCompatActivity() {
     private fun resetGame() {
         gameManager.resetGame()
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        gameManager.releaseResources()
-    }
 }
 

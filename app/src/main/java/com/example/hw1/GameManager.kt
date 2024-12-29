@@ -97,13 +97,18 @@ class GameManager(
     }
 
     private fun placeCoinsRandomly() {
-        val firstRow = coins[0]
-        for (i in firstRow.indices) {
-            firstRow[i].visibility = View.INVISIBLE
+        val firstRowCoins = coins[0]
+        val firstRowCops = cops[0]
+        for (i in firstRowCoins.indices) {
+            firstRowCoins[i].visibility = View.INVISIBLE
         }
-        val randomIndex = Random.nextInt(firstRow.size)
-        firstRow[randomIndex].visibility = View.VISIBLE
+        var randomIndex: Int
+        do {
+            randomIndex = Random.nextInt(firstRowCoins.size)
+        } while (firstRowCops[randomIndex].visibility == View.VISIBLE)
+        firstRowCoins[randomIndex].visibility = View.VISIBLE
     }
+
 
 
     fun moveThiefLeft() {
@@ -181,7 +186,7 @@ class GameManager(
 
 
     private fun handleCollision() {
-        //singleSoundPlayer.playSound(R.raw.boom_sound)
+        singleSoundPlayer.playSound(R.raw.boom_sound)
         lives--
         updateScore(-50)
         toastAndVibrate()
@@ -204,7 +209,7 @@ class GameManager(
     }
 
     private fun coinCollected() {
-        //singleSoundPlayer.playSound(R.raw.coin_sound)
+        singleSoundPlayer.playSound(R.raw.coin_sound)
         updateScore(100)
         SignalManager.getInstance().toast("Coin Collected! +100")
         SignalManager.getInstance().vibrate()
