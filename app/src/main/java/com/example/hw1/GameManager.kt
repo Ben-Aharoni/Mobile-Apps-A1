@@ -2,6 +2,7 @@ package com.example.hw1
 
 import android.content.Context
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
@@ -30,7 +31,7 @@ class GameManager(context: Context,
 
     private var gameOver = false
 
-    val handler = Handler()
+    val handler = Handler(Looper.getMainLooper())
 
     private lateinit var main_LBL_score: MaterialTextView
 

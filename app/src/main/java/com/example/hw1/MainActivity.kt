@@ -1,6 +1,7 @@
 package com.example.hw1
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
@@ -31,15 +32,22 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var tiltDetector: TiltDetector
 
-    private var isUsingSensors : Boolean = false
+    private var isUsingSensors = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        isUsingSensors = intent.getBooleanExtra("IS_USING_SENSORS", false)
         findViews()
         initGameManager()
         initViews()
+        if(isUsingSensors){
+            initTiltDetector()
+            leftArrow.visibility = View.GONE
+            rightArrow.visibility = View.GONE
+        }
+        gameManager.startGame()
     }
 
     private fun findViews() {
@@ -190,15 +198,15 @@ class MainActivity : AppCompatActivity() {
 
         main_LBL_score.text = gameManager.score.toString()
 
-        leftArrow.setOnClickListener {
-            gameManager.moveThiefLeft()
+        if (!isUsingSensors) {
+            leftArrow.setOnClickListener {
+                gameManager.moveThiefLeft()
+            }
+            rightArrow.setOnClickListener {
+                gameManager.moveThiefRight()
+            }
         }
 
-        rightArrow.setOnClickListener {
-            gameManager.moveThiefRight()
-        }
-
-        gameManager.startGame()
     }
 
     private fun resetGame() {
@@ -225,6 +233,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         if (!isUsingSensors) {
             initTiltDetector()
+            tiltDetector.start()
         }
     }
 
@@ -234,6 +243,18 @@ class MainActivity : AppCompatActivity() {
             tiltDetector.stop()
         }
     }
+
+    override fun onPause() {
+        super.onPause()
+        tiltDetector.stop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        tiltDetector.stop()
+    }
+
+
 
 }
 

@@ -23,8 +23,9 @@ class MenuActivity : AppCompatActivity() {
 
     private lateinit var title_SWITCH_Mode: MaterialSwitch
 
-     private lateinit var title_SWITCH_speed : MaterialSwitch
+    private lateinit var title_SWITCH_speed: MaterialSwitch
 
+    private val isUsingSensors = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +35,8 @@ class MenuActivity : AppCompatActivity() {
 
         findViews()
         initViews()
-        updateLabels()
-    }
 
+    }
 
 
     private fun findViews() {
@@ -50,37 +50,38 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        // Start Button Click Listener
+
+
         title_BTN_start.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("GAME_MODE", if (title_SWITCH_Mode.isChecked) "SENSORS" else "BUTTONS")
-            intent.putExtra("GAME_SPEED", if (title_SWITCH_Mode.isChecked) "FAST" else "SLOW")
+            val isUsingSensors = title_SWITCH_Mode.isChecked
+            //val gameSpeed = if (title_SWITCH_speed.isChecked) "FAST" else "SLOW"
+            val intent = Intent(this, MainActivity::class.java).apply {
+                putExtra("GAME_MODE", if (isUsingSensors) "SENSORS" else "BUTTONS")
+               // putExtra("GAME_SPEED", gameSpeed)
+                putExtra("IS_USING_SENSORS", isUsingSensors)
+            }
             startActivity(intent)
         }
 
-        // Records Button Click Listener
-       /* title_BTN_records.setOnClickListener {
-            val intent = Intent(this, RecordsActivity::class.java) // Assuming you have a RecordsActivity
-            startActivity(intent)
-        }*/
-
-        // Optional: Debugging or Toasts for Switch Changes
         title_SWITCH_Mode.setOnCheckedChangeListener { _, isChecked ->
-            val mode = if (isChecked) "Sensors Mode" else "Buttons Mode"
-            println("Game Mode Changed: $mode") // Or show a Toast
+            val isUsingSensors = title_SWITCH_Mode.isChecked
+            Intent().apply {
+                putExtra("IS_USING_SENSORS", isUsingSensors)
+
+            }
+
+            // Records Button Click Listener
+            /* title_BTN_records.setOnClickListener {
+                 val intent = Intent(this, RecordsActivity::class.java) // Assuming you have a RecordsActivity
+                 startActivity(intent)
+             }*/
+
+            title_SWITCH_speed.setOnCheckedChangeListener { _, isChecked ->
+                val speed = if (isChecked) "Fast Speed" else "Slow Speed"
+                println("Game Speed Changed: $speed") // Or show a Toast
+            }
         }
 
-        title_SWITCH_speed.setOnCheckedChangeListener { _, isChecked ->
-            val speed = if (isChecked) "Fast Speed" else "Slow Speed"
-            println("Game Speed Changed: $speed") // Or show a Toast
-        }
+
     }
-
-    private fun updateLabels() {
-        // Update the labels dynamically based on the switches
-        title_SWITCH_Mode.text = if (title_SWITCH_Mode.isChecked) "sensors" else "buttons"
-        title_SWITCH_speed.text = if (title_SWITCH_speed.isChecked) "fast" else "slow"
-    }
-
-
 }
