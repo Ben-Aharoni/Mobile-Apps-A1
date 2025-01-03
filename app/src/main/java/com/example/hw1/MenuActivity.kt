@@ -25,7 +25,7 @@ class MenuActivity : AppCompatActivity() {
 
     private lateinit var title_SWITCH_speed: MaterialSwitch
 
-    private val isUsingSensors = false
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

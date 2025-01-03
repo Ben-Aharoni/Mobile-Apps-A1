@@ -54,7 +54,7 @@
     <GridLayout
         android:id="@+id/main_GRID_obstacles"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@id/main_FAB_LeftArrow"
         android:layout_below="@id/main_HEARTS_position"
         android:background="@drawable/cops_and_robbers"
@@ -835,7 +835,7 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/main_FAB_RightArrow"
-        android:layout_width="@dimen/obstacle_dimens"
+        android:layout_width="@dimen/arrow_width"
         android:layout_height="@dimen/obstacle_dimens"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
@@ -843,17 +843,20 @@
         android:backgroundTint="@color/blue"
         android:text="@string/RightArrow"
         android:textColor="@color/black"
-        android:textSize="@dimen/Arrow_Size" />
+        android:textSize="@dimen/Arrow_Size"
+         />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/main_FAB_LeftArrow"
-        android:layout_width="@dimen/obstacle_dimens"
+        android:layout_width="@dimen/arrow_width"
         android:layout_height="@dimen/obstacle_dimens"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_margin="@dimen/default_margin"
         android:backgroundTint="@color/blue"
         android:text="@string/LeftArrow"
         android:textColor="@color/black"
-        android:textSize="@dimen/Arrow_Size" />
+        android:textSize="@dimen/Arrow_Size"
+         />
 
 </RelativeLayout>
