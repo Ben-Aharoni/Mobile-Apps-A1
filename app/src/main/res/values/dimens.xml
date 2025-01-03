@@ -4,13 +4,13 @@
     <dimen name="heart_dimens">40dp</dimen>
     <dimen name="hearts_layout_width">140dp</dimen>
     <dimen name="Arrow_Size">40sp</dimen>
-    <dimen name="obstacle_dimens">80dp</dimen>
+    <dimen name="obstacle_dimens">40dp</dimen>
     <dimen name="Lives_dimens">40dp</dimen>
     <dimen name="Score_dimens">40sp</dimen>
     <dimen name="score_margin_top">5dp</dimen>
     <dimen name="menu_image_width">150dp</dimen>
     <dimen name="menu_image_height">280dp</dimen>
-    <dimen name="menu_text_size">60sp</dimen>
+    <dimen name="menu_text_size">40sp</dimen>
     <dimen name="menu_title_margin">5dp</dimen>
-    <dimen name="title_GameMode_text_size">40sp</dimen>
+    <dimen name="title_GameMode_text_size">30sp</dimen>
 </resources>

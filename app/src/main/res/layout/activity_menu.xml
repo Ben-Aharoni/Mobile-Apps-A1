@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -41,11 +42,11 @@
         android:id="@+id/title_BTN_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
+        android:text="@string/start_BTN_text"
         android:layout_below="@id/title_LBL_title"
         android:layout_centerInParent="true"
         android:textSize="@dimen/menu_text_size"
-        android:textColor="@color/purple_300"
+        android:textColor="@color/white"
         android:layout_margin="@dimen/menu_title_margin"
         android:textStyle="bold"
         android:backgroundTint="@color/black"/>
@@ -54,11 +55,11 @@
         android:id="@+id/title_BTN_records"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Records"
+        android:text="@string/records_BTN_text"
         android:layout_below="@id/title_BTN_start"
         android:layout_centerInParent="true"
         android:textSize="@dimen/menu_text_size"
-        android:textColor="@color/purple_300"
+        android:textColor="@color/white"
         android:layout_margin="@dimen/menu_title_margin"
         android:textStyle="bold"
         android:backgroundTint="@color/black" />
@@ -70,14 +71,29 @@
         android:layout_below="@id/title_BTN_records"
         android:layout_centerInParent="true"
         android:textSize="@dimen/title_GameMode_text_size"
-        android:textColor="@color/purple_300"
+        android:textColor="@color/white"
         android:layout_margin="@dimen/menu_title_margin"
         android:textStyle="bold"
-        android:backgroundTint="@color/black"
         android:text="@string/game_mode_switch_text"
         app:showText="true"
         android:textOn="@string/sensors_switch_text"
         android:textOff="@string/buttons_switch_text"
+        />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/title_SWITCH_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_SWITCH_Mode"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/title_GameMode_text_size"
+        android:textColor="@color/white"
+        android:layout_margin="@dimen/menu_title_margin"
+        android:textStyle="bold"
+        android:text="@string/game_speed_switch_text"
+        app:showText="true"
+        android:textOn="@string/switch_speed_fast"
+        android:textOff="@string/switch_speed_slow"
         />
 
 

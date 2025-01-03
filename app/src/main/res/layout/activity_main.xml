@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cops_and_robbers"
+    android:layoutDirection="ltr"
     tools:context=".MainActivity">
 
     <com.google.android.material.textview.MaterialTextView
@@ -57,7 +58,7 @@
         android:layout_below="@id/main_HEARTS_position"
         android:background="@drawable/cops_and_robbers"
         android:columnCount="5"
-        android:rowCount="10"
+        android:rowCount="9"
         android:useDefaultMargins="true"
         tools:context=".MainActivity">
 
@@ -65,717 +66,768 @@
             android:id="@+id/main_IMG_cop3"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop5"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop8"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop11"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop14"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop2"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop1"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop4"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop7"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop10"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop13"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop6"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop9"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop12"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop15"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop16"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop17"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop18"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop19"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop20"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop21"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop22"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop23"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop24"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop25"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop26"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop27"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop28"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop29"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_cop30"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop31"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop32"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop33"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop34"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop35"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="4"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop36"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop37"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop38"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop39"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="3"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/cop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_cop40"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/cop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin1"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin2"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin3"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin4"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin5"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
+            android:layout_row="0"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
+
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin6"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin7"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin8"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin9"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin10"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
+            android:layout_row="1"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_thief_3"
-            android:layout_width="@dimen/obstacle_dimens"
-            android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="8"
-            android:layout_rowWeight="1"
-            android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/thief" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin11"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin12"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin13"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin14"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin15"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
+            android:layout_row="5"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin16"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
+
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin17"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin18"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin19"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin20"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="5"
-            android:layout_rowWeight="1"
+            android:layout_row="2"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin21"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin22"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin23"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin24"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin25"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="6"
-            android:layout_rowWeight="1"
+            android:layout_row="3"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin26"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin27"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin28"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin29"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin30"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="7"
-            android:layout_rowWeight="1"
+            android:layout_row="4"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin31"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin32"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin33"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin34"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin35"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="6"
+            android:layout_column="4"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin36"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin37"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin38"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin39"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="3"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/coin" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin40"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/coin" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_thief_1"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="8"
-            android:layout_rowWeight="1"
+            android:layout_row="7"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/thief" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_thief_2"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="8"
-            android:layout_rowWeight="1"
+            android:layout_row="7"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/thief" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_thief_3"
+            android:layout_width="@dimen/obstacle_dimens"
+            android:layout_height="@dimen/obstacle_dimens"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/thief" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_thief_4"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="8"
-            android:layout_rowWeight="1"
+            android:layout_row="7"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/thief" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_thief_5"
             android:layout_width="@dimen/obstacle_dimens"
             android:layout_height="@dimen/obstacle_dimens"
-            android:layout_row="8"
-            android:layout_rowWeight="1"
+            android:layout_row="7"
             android:layout_column="4"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
+            android:layout_margin="20dp"
             app:srcCompat="@drawable/thief" />
     </GridLayout>
 

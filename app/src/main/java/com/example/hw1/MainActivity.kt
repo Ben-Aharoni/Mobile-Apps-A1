@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
+import com.example.hw1.interfaces.TiltCallback
+import com.example.hw1.utilities.SingleSoundPlayer
+import com.example.hw1.utilities.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var main_LBL_score: MaterialTextView
 
@@ -24,6 +28,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var coins: Array<Array<ImageView>>
 
     private lateinit var gameManager: GameManager
+
+    private lateinit var tiltDetector: TiltDetector
+
+    private var isUsingSensors : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,6 +100,18 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_IMG_cop15),
                 findViewById(R.id.main_IMG_cop20),
                 findViewById(R.id.main_IMG_cop25)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_cop31),
+                findViewById(R.id.main_IMG_cop32),
+                findViewById(R.id.main_IMG_cop33),
+                findViewById(R.id.main_IMG_cop34),
+                findViewById(R.id.main_IMG_cop35)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_cop36),
+                findViewById(R.id.main_IMG_cop37),
+                findViewById(R.id.main_IMG_cop38),
+                findViewById(R.id.main_IMG_cop39),
+                findViewById(R.id.main_IMG_cop40)
             )
         )
 
@@ -132,6 +152,18 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_IMG_coin28),
                 findViewById(R.id.main_IMG_coin29),
                 findViewById(R.id.main_IMG_coin30)
+            ),arrayOf(
+                findViewById(R.id.main_IMG_coin31),
+                findViewById(R.id.main_IMG_coin32),
+                findViewById(R.id.main_IMG_coin33),
+                findViewById(R.id.main_IMG_coin34),
+                findViewById(R.id.main_IMG_coin35)
+            ),arrayOf(
+                findViewById(R.id.main_IMG_coin36),
+                findViewById(R.id.main_IMG_coin37),
+                findViewById(R.id.main_IMG_coin38),
+                findViewById(R.id.main_IMG_coin39),
+                findViewById(R.id.main_IMG_coin40)
             )
         )
     }
@@ -172,5 +204,36 @@ class MainActivity : AppCompatActivity() {
     private fun resetGame() {
         gameManager.resetGame()
     }
+
+    private fun initTiltDetector() {
+        tiltDetector = TiltDetector(
+            context = this,
+            tiltCallback = object : TiltCallback {
+                override fun tiltX() {
+                    if (tiltDetector.tiltCounterX > 0) {
+                        gameManager.moveThiefRight()
+                    } else {
+                        gameManager.moveThiefLeft()
+                    }
+                }
+            }
+        )
+        tiltDetector.start()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!isUsingSensors) {
+            initTiltDetector()
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        if (isUsingSensors) {
+            tiltDetector.stop()
+        }
+    }
+
 }
 

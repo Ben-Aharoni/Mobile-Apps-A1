@@ -2,6 +2,7 @@ package com.example.hw1
 
 import android.app.Application
 import com.example.hw1.utilities.SignalManager
+import com.example.hw1.utilities.SingleSoundPlayer
 
 class App : Application() {
 

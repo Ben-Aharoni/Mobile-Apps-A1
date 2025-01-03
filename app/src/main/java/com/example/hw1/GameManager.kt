@@ -10,8 +10,7 @@ import com.example.hw1.utilities.SingleSoundPlayer
 import com.google.android.material.textview.MaterialTextView
 import kotlin.random.Random
 
-class GameManager(
-    private val context: Context,
+class GameManager(context: Context,
     private val thief: Array<ImageView>,
     private val cops: Array<Array<ImageView>>,
     private val coins: Array<Array<ImageView>>,
@@ -31,7 +30,7 @@ class GameManager(
 
     private var gameOver = false
 
-    private val handler = Handler()
+    val handler = Handler()
 
     private lateinit var main_LBL_score: MaterialTextView
 
@@ -186,7 +185,7 @@ class GameManager(
 
 
     private fun handleCollision() {
-        singleSoundPlayer.playSound(R.raw.boom_sound)
+       // singleSoundPlayer.playSound(R.raw.boom_sound)
         lives--
         updateScore(-50)
         toastAndVibrate()
@@ -209,7 +208,7 @@ class GameManager(
     }
 
     private fun coinCollected() {
-        singleSoundPlayer.playSound(R.raw.coin_sound)
+       // singleSoundPlayer.playSound(R.raw.coin_sound)
         updateScore(100)
         SignalManager.getInstance().toast("Coin Collected! +100")
         SignalManager.getInstance().vibrate()
@@ -223,6 +222,7 @@ class GameManager(
         }
         onScoreUpdated(score)
     }
+
 }
 
 
