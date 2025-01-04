@@ -29,4 +29,17 @@
         android:layout_marginTop="10dp"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/highScore_BTN_main_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_menu"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/main_menu_margin"
+        android:layout_marginLeft="@dimen/main_menu_margin"
+        android:layout_below="@id/highScore_ET_location"
+        android:layout_centerHorizontal="true"
+        />
+
 </RelativeLayout>

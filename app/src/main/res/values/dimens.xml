@@ -17,4 +17,5 @@
     <dimen name="game_title_size">45sp</dimen>
     <dimen name="thumb_switch_margin">3dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="main_menu_margin">10dp</dimen>
 </resources>

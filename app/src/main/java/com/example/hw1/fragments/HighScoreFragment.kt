@@ -1,11 +1,15 @@
 package com.example.hw1.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.hw1.MainActivity
+import com.example.hw1.MenuActivity
 import com.example.hw1.R
+import com.example.hw1.RecordsMapActivity
 import com.example.hw1.interfaces.Callback_HighScoreItemClicked
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
@@ -16,6 +20,10 @@ class HighScoreFragment : Fragment() {
     private lateinit var highScore_ET_location: TextInputEditText
 
     private lateinit var highScore_BTN_send: MaterialButton
+
+    private lateinit var highScore_BTN_main_menu: MaterialButton
+
+
 
     var highScoreItemClicked: Callback_HighScoreItemClicked? = null
 
@@ -37,6 +45,12 @@ class HighScoreFragment : Fragment() {
 
 
     private fun initViews(v: View) {
+
+        highScore_BTN_main_menu.setOnClickListener {
+            val intent = Intent(activity, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
         highScore_BTN_send.setOnClickListener { v: View ->
             var coordinates = highScore_ET_location.text?.split(",")
             var lat: Double = coordinates?.get(0)?.toDouble() ?: 0.0
@@ -51,6 +65,7 @@ class HighScoreFragment : Fragment() {
     }
 
     private fun findViews(v: View) {
+        highScore_BTN_main_menu = v.findViewById(R.id.highScore_BTN_main_menu)
         highScore_ET_location = v.findViewById(R.id.highScore_ET_location)
         highScore_BTN_send = v.findViewById(R.id.highScore_BTN_send)
     }

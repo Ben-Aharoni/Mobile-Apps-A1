@@ -15,4 +15,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hint_text">please enter your location</string>
     <string name="send">Send</string>
+    <string name="main_menu">Main Menu</string>
 </resources>
