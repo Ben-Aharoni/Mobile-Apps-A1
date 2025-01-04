@@ -8,7 +8,6 @@ import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.hw1.utilities.SignalManager
 import com.example.hw1.utilities.SingleSoundPlayer
-import com.google.android.material.textview.MaterialTextView
 import kotlin.random.Random
 
 class GameManager(
@@ -190,7 +189,7 @@ class GameManager(
 
 
     private fun handleCollision() {
-        // singleSoundPlayer.playSound(R.raw.boom_sound)
+       // singleSoundPlayer.playSound(R.raw.boom_sound)
         lives--
         updateScore(-50)
         toastAndVibrate()

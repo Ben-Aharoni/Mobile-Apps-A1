@@ -6,7 +6,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.hw1.interfaces.TiltCallback
-import com.example.hw1.utilities.SingleSoundPlayer
 import com.example.hw1.utilities.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
@@ -197,7 +196,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initViews() {
-
         main_LBL_score.text = gameManager.score.toString()
 
         if (!isTiltMode) {
@@ -208,7 +206,6 @@ class MainActivity : AppCompatActivity() {
                 gameManager.moveThiefRight()
             }
         }
-
     }
 
     private fun resetGame() {
