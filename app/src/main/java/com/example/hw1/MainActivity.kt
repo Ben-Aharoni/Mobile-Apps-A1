@@ -32,26 +32,28 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var tiltDetector: TiltDetector
 
-    private var isUsingSensors = false
+    private var isTiltMode = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        isUsingSensors = intent.getBooleanExtra("IS_USING_SENSORS", false)
+        isTiltMode = intent.getBooleanExtra("IS_TILT_MODE", false)
+        val isFastSpeed = intent.getBooleanExtra("GAME_SPEED", false)
         findViews()
         initGameManager()
         initViews()
-        if(isUsingSensors){
+        if (isTiltMode) {
             initTiltDetector()
             leftArrow.visibility = View.GONE
             rightArrow.visibility = View.GONE
         }
+        gameManager.updateSpeed(isFastSpeed)
         gameManager.startGame()
     }
 
     private fun findViews() {
-
         main_LBL_score = findViewById(R.id.main_LBL_score)
 
         hearts = arrayOf(
@@ -160,13 +162,13 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_IMG_coin28),
                 findViewById(R.id.main_IMG_coin29),
                 findViewById(R.id.main_IMG_coin30)
-            ),arrayOf(
+            ), arrayOf(
                 findViewById(R.id.main_IMG_coin31),
                 findViewById(R.id.main_IMG_coin32),
                 findViewById(R.id.main_IMG_coin33),
                 findViewById(R.id.main_IMG_coin34),
                 findViewById(R.id.main_IMG_coin35)
-            ),arrayOf(
+            ), arrayOf(
                 findViewById(R.id.main_IMG_coin36),
                 findViewById(R.id.main_IMG_coin37),
                 findViewById(R.id.main_IMG_coin38),
@@ -198,7 +200,7 @@ class MainActivity : AppCompatActivity() {
 
         main_LBL_score.text = gameManager.score.toString()
 
-        if (!isUsingSensors) {
+        if (!isTiltMode) {
             leftArrow.setOnClickListener {
                 gameManager.moveThiefLeft()
             }
@@ -231,7 +233,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (isUsingSensors) {
+        if (isTiltMode) {
             initTiltDetector()
             tiltDetector.start()
         }
@@ -239,7 +241,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        if (isUsingSensors) {
+        if (isTiltMode) {
             tiltDetector.stop()
         }
     }
@@ -253,7 +255,6 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         tiltDetector.stop()
     }
-
 
 
 }

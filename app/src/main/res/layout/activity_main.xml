@@ -57,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/main_FAB_LeftArrow"
         android:layout_below="@id/main_HEARTS_position"
-        android:background="@drawable/cops_and_robbers"
         android:columnCount="5"
         android:rowCount="9"
         android:useDefaultMargins="true"

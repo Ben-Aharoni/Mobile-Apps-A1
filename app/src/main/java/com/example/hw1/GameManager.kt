@@ -11,7 +11,8 @@ import com.example.hw1.utilities.SingleSoundPlayer
 import com.google.android.material.textview.MaterialTextView
 import kotlin.random.Random
 
-class GameManager(context: Context,
+class GameManager(
+    context: Context,
     private val thief: Array<ImageView>,
     private val cops: Array<Array<ImageView>>,
     private val coins: Array<Array<ImageView>>,
@@ -33,8 +34,12 @@ class GameManager(context: Context,
 
     val handler = Handler(Looper.getMainLooper())
 
-    private lateinit var main_LBL_score: MaterialTextView
+    private var gameSpeed: Long = 1000L
 
+
+    fun updateSpeed(isFast: Boolean) {
+        gameSpeed = if (isFast) 500L else 1000L
+    }
 
     fun resetGame() {
         lives = 3
@@ -110,7 +115,6 @@ class GameManager(context: Context,
     }
 
 
-
     fun moveThiefLeft() {
         if (!gameOver && thiefPosition > 0) {
             thief[thiefPosition].visibility = View.INVISIBLE
@@ -139,7 +143,7 @@ class GameManager(context: Context,
                     placeCopsRandomly()
                     placeCoinsRandomly()
                     checkCollisions()
-                    handler.postDelayed(this, 1000)
+                    handler.postDelayed(this, gameSpeed)
                 }
             }
         }
@@ -186,7 +190,7 @@ class GameManager(context: Context,
 
 
     private fun handleCollision() {
-       // singleSoundPlayer.playSound(R.raw.boom_sound)
+        // singleSoundPlayer.playSound(R.raw.boom_sound)
         lives--
         updateScore(-50)
         toastAndVibrate()
@@ -209,7 +213,7 @@ class GameManager(context: Context,
     }
 
     private fun coinCollected() {
-       // singleSoundPlayer.playSound(R.raw.coin_sound)
+        // singleSoundPlayer.playSound(R.raw.coin_sound)
         updateScore(100)
         SignalManager.getInstance().toast("Coin Collected! +100")
         SignalManager.getInstance().vibrate()

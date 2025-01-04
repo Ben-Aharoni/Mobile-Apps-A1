@@ -10,7 +10,6 @@ import com.google.android.material.textview.MaterialTextView
 
 class MenuActivity : AppCompatActivity() {
 
-
     private lateinit var title_IMG_cop: AppCompatImageView
 
     private lateinit var title_IMG_thief: AppCompatImageView
@@ -26,18 +25,14 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var title_SWITCH_speed: MaterialSwitch
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-
 
         findViews()
         initViews()
 
     }
-
 
     private fun findViews() {
         title_IMG_cop = findViewById(R.id.title_IMG_cop)
@@ -50,38 +45,46 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-
-
         title_BTN_start.setOnClickListener {
-            val isUsingSensors = title_SWITCH_Mode.isChecked
-            //val gameSpeed = if (title_SWITCH_speed.isChecked) "FAST" else "SLOW"
-            val intent = Intent(this, MainActivity::class.java).apply {
-                putExtra("GAME_MODE", if (isUsingSensors) "SENSORS" else "BUTTONS")
-               // putExtra("GAME_SPEED", gameSpeed)
-                putExtra("IS_USING_SENSORS", isUsingSensors)
-            }
-            startActivity(intent)
+            onStartClicked()
         }
 
         title_SWITCH_Mode.setOnCheckedChangeListener { _, isChecked ->
-            val isUsingSensors = title_SWITCH_Mode.isChecked
+            val isTiltMode = title_SWITCH_Mode.isChecked
             Intent().apply {
-                putExtra("IS_USING_SENSORS", isUsingSensors)
+                putExtra("IS_TILT_MODE", isTiltMode)
 
-            }
-
-            // Records Button Click Listener
-            /* title_BTN_records.setOnClickListener {
-                 val intent = Intent(this, RecordsActivity::class.java) // Assuming you have a RecordsActivity
-                 startActivity(intent)
-             }*/
-
-            title_SWITCH_speed.setOnCheckedChangeListener { _, isChecked ->
-                val speed = if (isChecked) "Fast Speed" else "Slow Speed"
-                println("Game Speed Changed: $speed") // Or show a Toast
             }
         }
 
+        title_SWITCH_speed.setOnCheckedChangeListener { _, isChecked ->
+            val speed = title_SWITCH_speed.isChecked
+            Intent().apply {
+                putExtra("GAME_SPEED", speed)
+
+            }
+        }
+
+        // Records Button Click Listener
+        /* title_BTN_records.setOnClickListener {
+             val intent = Intent(this, RecordsActivity::class.java) // Assuming you have a RecordsActivity
+             startActivity(intent)
+         }*/
+
 
     }
+
+    private fun onStartClicked() {
+        val isTiltMode = title_SWITCH_Mode.isChecked
+        val isFastSpeed = title_SWITCH_speed.isChecked
+
+        val intent = Intent(this, MainActivity::class.java).apply {
+            putExtra("GAME_MODE", if (isTiltMode) "SENSORS" else "BUTTONS")
+            putExtra("IS_TILT_MODE", isTiltMode)
+            putExtra("GAME_SPEED", isFastSpeed)
+        }
+        startActivity(intent)
+    }
+
+
 }
