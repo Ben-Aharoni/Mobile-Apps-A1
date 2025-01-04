@@ -16,4 +16,5 @@
     <dimen name="arrow_width">60dp</dimen>
     <dimen name="game_title_size">45sp</dimen>
     <dimen name="thumb_switch_margin">3dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

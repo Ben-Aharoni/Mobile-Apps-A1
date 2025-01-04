@@ -65,13 +65,10 @@ class MenuActivity : AppCompatActivity() {
             }
         }
 
-        // Records Button Click Listener
-        /* title_BTN_records.setOnClickListener {
-             val intent = Intent(this, RecordsActivity::class.java) // Assuming you have a RecordsActivity
+         title_BTN_records.setOnClickListener {
+             val intent = Intent(this, RecordsMapActivity::class.java)
              startActivity(intent)
-         }*/
-
-
+         }
     }
 
     private fun onStartClicked() {

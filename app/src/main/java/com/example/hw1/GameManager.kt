@@ -189,7 +189,7 @@ class GameManager(
 
 
     private fun handleCollision() {
-       // singleSoundPlayer.playSound(R.raw.boom_sound)
+        //singleSoundPlayer.playSound(R.raw.boom_sound)
         lives--
         updateScore(-50)
         toastAndVibrate()
