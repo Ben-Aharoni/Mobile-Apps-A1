@@ -138,12 +138,6 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_IMG_coin9),
                 findViewById(R.id.main_IMG_coin10)
             ), arrayOf(
-                findViewById(R.id.main_IMG_coin11),
-                findViewById(R.id.main_IMG_coin12),
-                findViewById(R.id.main_IMG_coin13),
-                findViewById(R.id.main_IMG_coin14),
-                findViewById(R.id.main_IMG_coin15)
-            ), arrayOf(
                 findViewById(R.id.main_IMG_coin16),
                 findViewById(R.id.main_IMG_coin17),
                 findViewById(R.id.main_IMG_coin18),
@@ -161,6 +155,12 @@ class MainActivity : AppCompatActivity() {
                 findViewById(R.id.main_IMG_coin28),
                 findViewById(R.id.main_IMG_coin29),
                 findViewById(R.id.main_IMG_coin30)
+            ), arrayOf(
+                findViewById(R.id.main_IMG_coin11),
+                findViewById(R.id.main_IMG_coin12),
+                findViewById(R.id.main_IMG_coin13),
+                findViewById(R.id.main_IMG_coin14),
+                findViewById(R.id.main_IMG_coin15)
             ), arrayOf(
                 findViewById(R.id.main_IMG_coin31),
                 findViewById(R.id.main_IMG_coin32),
