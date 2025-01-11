@@ -17,7 +17,6 @@ import com.example.hw1.interfaces.Callback_HighScoreItemClicked
 import com.example.hw1.model.Score
 import com.google.android.material.button.MaterialButton
 
-
 class HighScoreFragment : Fragment() {
 
     private lateinit var highScore_BTN_main_menu: MaterialButton
