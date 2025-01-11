@@ -7,28 +7,6 @@
     android:background="@color/blue_300"
     tools:context=".fragments.HighScoreFragment">
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/highScore_ET_location"
-        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_centerInParent="true"
-        android:hint="@string/hint_text"
-        android:textColorHint="@color/black"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/highScore_BTN_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send"
-        android:layout_below="@id/highScore_ET_location"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/highScore_BTN_main_menu"
         android:layout_width="wrap_content"
@@ -38,8 +16,29 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="@dimen/main_menu_margin"
         android:layout_marginLeft="@dimen/main_menu_margin"
-        android:layout_below="@id/highScore_ET_location"
         android:layout_centerHorizontal="true"
         />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/highScore_BTN_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Scores"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/main_menu_margin"
+        android:layout_marginLeft="@dimen/main_menu_margin"
+        android:layout_centerHorizontal="true"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/highScore_RV_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/highScore_BTN_main_menu"
+        android:layout_margin="5dp"
+        tools:listitem="@layout/score_item"
+        tools:itemCount="10"
+
+        />
 </RelativeLayout>

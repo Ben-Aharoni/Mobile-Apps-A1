@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.hw1.fragments.HighScoreFragment
 import com.example.hw1.interfaces.Callback_HighScoreItemClicked
 import com.example.hw1.fragments.MapFragment
+import com.example.hw1.model.Score
 
 class RecordsMapActivity : AppCompatActivity() {
 
@@ -19,6 +20,9 @@ class RecordsMapActivity : AppCompatActivity() {
     private lateinit var mapFragment: MapFragment
 
     private lateinit var highScoreFragment: HighScoreFragment
+
+    private var currentScore: Int = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,4 +58,33 @@ class RecordsMapActivity : AppCompatActivity() {
             .add(R.id.main_FRAME_list ,highScoreFragment )
             .commit()
     }
+
+    override fun onResume() {
+        super.onResume()
+        loadScoreFromIntent()
+        //locationPermissions()
+        addScoreIfNeeded(31.0, 35.0)
+        val fragment = supportFragmentManager.findFragmentById(R.id.main_FRAME_list) as? HighScoreFragment
+        fragment?.updateScore()
+    }
+
+    private fun loadScoreFromIntent() {
+        val bundle = intent.extras ?: return
+        currentScore = bundle.getInt("Score:", 0)
+    }
+
+    private fun addScoreIfNeeded(lat: Double, lang: Double) {
+        if (currentScore == 0)
+            return
+
+        val scores = ScoreManager.getInstance(this).scores
+        if (scores.size < 10 || currentScore > scores.last().score) {
+            val newScore = Score(currentScore, lat, lang)
+            ScoreManager.getInstance(this).updateScore(newScore)
+            highScoreFragment.updateScore()
+
+        }
+        currentScore = 0
+    }
+
 }

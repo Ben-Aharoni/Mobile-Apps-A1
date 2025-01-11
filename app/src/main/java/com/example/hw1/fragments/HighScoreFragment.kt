@@ -1,29 +1,33 @@
 package com.example.hw1.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.hw1.MainActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hw1.MenuActivity
 import com.example.hw1.R
-import com.example.hw1.RecordsMapActivity
+import com.example.hw1.ScoreManager
+import com.example.hw1.adapters.ScoreAdapter
 import com.example.hw1.interfaces.Callback_HighScoreItemClicked
+import com.example.hw1.model.Score
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
 
 
 class HighScoreFragment : Fragment() {
 
-    private lateinit var highScore_ET_location: TextInputEditText
-
-    private lateinit var highScore_BTN_send: MaterialButton
-
     private lateinit var highScore_BTN_main_menu: MaterialButton
 
+    private lateinit var highScore_BTN_clear: MaterialButton
 
+    private lateinit var highScore_RV_list: RecyclerView
+
+    var score: MutableList<Score> = mutableListOf()
+    private val scoreAdapter = ScoreAdapter(score)
 
     var highScoreItemClicked: Callback_HighScoreItemClicked? = null
 
@@ -36,28 +40,32 @@ class HighScoreFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_high_score, container, false)
         findViews(v)
-        initViews(v)
+        initViews(context)
         return v
     }
 
 
-    private fun initViews(v: View) {
-
+    private fun initViews(context: Context?) {
+        if (context == null) {
+            return
+        }
         highScore_BTN_main_menu.setOnClickListener {
             val intent = Intent(activity, MenuActivity::class.java)
             startActivity(intent)
         }
 
-        highScore_BTN_send.setOnClickListener { v: View ->
-            var coordinates = highScore_ET_location.text?.split(",")
-            var lat: Double = coordinates?.get(0)?.toDouble() ?: 0.0
-            var lon: Double = coordinates?.get(1)?.toDouble() ?: 0.0
-
-            itemClicked(lat, lon)
+        highScore_BTN_clear.setOnClickListener {
+            ScoreManager.getInstance(requireContext()).clearScores()
+            scoreAdapter.notifyDataSetChanged()
+            updateScore()
         }
+
+        highScore_RV_list.adapter = scoreAdapter
+        scoreAdapter.callback = highScoreItemClicked
+        highScore_RV_list.layoutManager = LinearLayoutManager(context)
+
     }
 
     private fun itemClicked(lat: Double, lon: Double) {
@@ -66,7 +74,13 @@ class HighScoreFragment : Fragment() {
 
     private fun findViews(v: View) {
         highScore_BTN_main_menu = v.findViewById(R.id.highScore_BTN_main_menu)
-        highScore_ET_location = v.findViewById(R.id.highScore_ET_location)
-        highScore_BTN_send = v.findViewById(R.id.highScore_BTN_send)
+        highScore_RV_list = v.findViewById(R.id.highScore_RV_list)
+        highScore_BTN_clear = v.findViewById(R.id.highScore_BTN_clear)
+
+    }
+
+    fun updateScore() {
+        val newScores = ScoreManager.getInstance(requireContext()).scores
+        scoreAdapter.updateScores(newScores)
     }
 }

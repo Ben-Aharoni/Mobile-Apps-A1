@@ -1,11 +1,13 @@
 package com.example.hw1
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.hw1.interfaces.TiltCallback
+import com.example.hw1.model.Score
 import com.example.hw1.utilities.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
@@ -33,6 +35,8 @@ class MainActivity : AppCompatActivity() {
 
     private var isTiltMode = false
 
+    private lateinit var scoreManager: ScoreManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         isTiltMode = intent.getBooleanExtra("IS_TILT_MODE", false)
         val isFastSpeed = intent.getBooleanExtra("GAME_SPEED", false)
         findViews()
+        scoreManager = ScoreManager.getInstance(this)
         initGameManager()
         initViews()
         if (isTiltMode) {
@@ -184,7 +189,7 @@ class MainActivity : AppCompatActivity() {
             cops = cops,
             coins = coins,
             hearts = hearts,
-            onGameOver = { resetGame() },
+            onGameOver = { handleGameOver(gameManager.score) },
             onScoreUpdated = { newScore -> updateScoreUI(newScore) })
     }
 
@@ -245,14 +250,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        tiltDetector.stop()
+        if (isTiltMode) {
+            tiltDetector.stop()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        tiltDetector.stop()
+        if (isTiltMode) {
+            tiltDetector.stop()
+        }
     }
 
-
+    private fun handleGameOver(score: Int) {
+        scoreManager.updateScore(Score(score, 0.0, 0.0))
+        val intent = Intent(this, RecordsMapActivity::class.java)
+        var bundle = Bundle()
+        bundle.putInt("Score:", score)
+        intent.putExtras(bundle)
+        startActivity(intent)
+        finish()
+    }
 }
 

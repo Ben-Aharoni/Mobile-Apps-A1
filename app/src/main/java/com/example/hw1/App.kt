@@ -9,5 +9,8 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         SignalManager.init(this)
+        ScoreManager.getInstance(this)
+        ScoreManager.getInstance(this).loadScores()
+
     }
 }
