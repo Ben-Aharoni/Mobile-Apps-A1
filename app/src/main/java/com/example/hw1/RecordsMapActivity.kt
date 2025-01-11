@@ -2,10 +2,7 @@ package com.example.hw1
 
 import android.os.Bundle
 import android.widget.FrameLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.hw1.fragments.HighScoreFragment
 import com.example.hw1.interfaces.Callback_HighScoreItemClicked
 import com.example.hw1.fragments.MapFragment
@@ -62,8 +59,9 @@ class RecordsMapActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         loadScoreFromIntent()
-        //locationPermissions()
-        addScoreIfNeeded(31.0, 35.0)
+        var lat = intent.getDoubleExtra("lat", 0.0)
+        var lang = intent.getDoubleExtra("lang", 0.0)
+        addScore(lang,lat)
         val fragment = supportFragmentManager.findFragmentById(R.id.main_FRAME_list) as? HighScoreFragment
         fragment?.updateScore()
     }
@@ -73,7 +71,7 @@ class RecordsMapActivity : AppCompatActivity() {
         currentScore = bundle.getInt("Score:", 0)
     }
 
-    private fun addScoreIfNeeded(lat: Double, lang: Double) {
+    private fun addScore(lat: Double, lang: Double) {
         if (currentScore == 0)
             return
 
