@@ -30,11 +30,6 @@ class HighScoreFragment : Fragment() {
 
     var highScoreItemClicked: Callback_HighScoreItemClicked? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
