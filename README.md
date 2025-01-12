@@ -48,4 +48,8 @@
 
 ## Game Screens
 
+![Game Start Screen](URL_TO_START_SCREEN_IMAGE)
+![Gameplay Screen](URL_TO_GAMEPLAY_IMAGE)
+![High Scores Screen](URL_TO_HIGH_SCORES_IMAGE)
+
 Author: [Ben-Aharoni](https://github.com/Ben-Aharoni)
