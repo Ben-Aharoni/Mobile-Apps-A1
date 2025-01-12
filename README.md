@@ -8,7 +8,6 @@
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [How To Install](#howtoinstall)
-  - [In Game](#ingame)
 - [Game Screens](#gamescreens)
 
 ## App Overview
@@ -39,17 +38,13 @@
 4. Sync the project with Gradle.
 5. Run the application on an emulator or physical device.
 
-### Usage
+### In Game Usage
 **Main Menu**
 - **Start**: Begin a new game session.
-- **Records**: View high scores and their locations on the map.
+- **Records**: View your top 10 high scores and their locations on the map.
 - **Game Mode**: chose between buttons or tilt sensors
 - **Game Speed**: chose between slow or fast
 
-
-**High Scores**
-- View your top 10 scores on the leaderboard.
-- Tap on a score to zoom in on its location on the map.
 
 ## Game Screens
 
