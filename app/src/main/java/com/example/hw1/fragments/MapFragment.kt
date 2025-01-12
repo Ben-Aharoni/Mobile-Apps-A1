@@ -11,6 +11,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class MapFragment : Fragment(), OnMapReadyCallback {
 
@@ -37,10 +38,23 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 10f))
     }
 
-    fun zoom(lat: Double, lon: Double) {
+    fun placeMarkerAndZoom(lat: Double, lon: Double, title: String) {
         if (::googleMap.isInitialized) {
+            // If you want only one marker at a time, clear the map first:
+            googleMap.clear()
+
             val position = LatLng(lat, lon)
+
+            // Place a marker
+            googleMap.addMarker(
+                MarkerOptions()
+                    .position(position)
+                    .title(title)
+            )
+
+            // Zoom the camera
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 14f))
         }
     }
+
 }

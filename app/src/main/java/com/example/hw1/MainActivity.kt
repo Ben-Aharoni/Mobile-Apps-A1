@@ -7,13 +7,11 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.example.hw1.interfaces.TiltCallback
-import com.example.hw1.model.Score
 import com.example.hw1.utilities.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
 
 class MainActivity : AppCompatActivity() {
-
 
     private lateinit var main_LBL_score: MaterialTextView
 
@@ -37,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var scoreManager: ScoreManager
 
+    private var currentLat: Double = 34.83639
+
+    private var currentLon: Double = 32.08556
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -213,10 +214,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun resetGame() {
-        gameManager.resetGame()
-    }
-
     private fun initTiltDetector() {
         tiltDetector = TiltDetector(
             context = this,
@@ -262,14 +259,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun handleGameOver(score: Int) {
-        scoreManager.updateScore(Score(score, 0.0, 0.0))
+    fun handleGameOver(finalScore: Int) {
         val intent = Intent(this, RecordsMapActivity::class.java)
-        var bundle = Bundle()
-        bundle.putInt("Score:", score)
-        intent.putExtras(bundle)
+        intent.putExtra("Score", finalScore)
+        //intent.putExtra("Lat", currentLat)
+        //intent.putExtra("Lon", currentLon)
         startActivity(intent)
         finish()
     }
+
 }
 

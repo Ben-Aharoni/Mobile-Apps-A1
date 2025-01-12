@@ -46,7 +46,7 @@ class ScoreAdapter(private var scoresRV: MutableList<Score>) :
             binding.scoreCVScore.setOnClickListener {
                 callback?.highScoreItemClicked(
                     getItem(adapterPosition).lat,
-                    getItem(adapterPosition).lang
+                    getItem(adapterPosition).lon
                 )
             }
         }
