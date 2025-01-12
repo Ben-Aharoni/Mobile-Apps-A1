@@ -189,7 +189,7 @@ class GameManager(
 
 
     private fun handleCollision() {
-        //singleSoundPlayer.playSound(R.raw.boom_sound)
+        singleSoundPlayer.playSound(R.raw.boom_cinema)
         lives--
         updateScore(-50)
         toastAndVibrate()
@@ -212,7 +212,7 @@ class GameManager(
     }
 
     private fun coinCollected() {
-        // singleSoundPlayer.playSound(R.raw.coin_sound)
+        singleSoundPlayer.playSound(R.raw.coin_collected)
         updateScore(100)
         SignalManager.getInstance().toast("Coin Collected! +100")
         SignalManager.getInstance().vibrate()

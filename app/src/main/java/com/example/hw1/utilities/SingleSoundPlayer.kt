@@ -2,28 +2,26 @@ package com.example.hw1.utilities
 
 import android.content.Context
 import android.media.MediaPlayer
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
 
 class SingleSoundPlayer(context: Context) {
 
-    private val context: Context = context.applicationContext
-    private val executor: Executor = Executors.newSingleThreadExecutor()
+    private val appContext = context.applicationContext
+    private var mediaPlayer: MediaPlayer? = null
 
-    fun playSound(resId: Int){
-        executor.execute {
-            val mediaPlayer = MediaPlayer.create(context, resId)
-            mediaPlayer.isLooping = false
-            mediaPlayer.setVolume(1.0f, 1.0f)
-            mediaPlayer.start()
-
-            mediaPlayer.setOnCompletionListener { mp: MediaPlayer? ->
-                var mpl = mp
-                mpl!!.stop()
-                mpl.release()
-                mpl = null
+    fun playSound(resId: Int) {
+        try {
+            mediaPlayer?.release()
+            mediaPlayer = MediaPlayer.create(appContext, resId)
+            mediaPlayer?.apply {
+                isLooping = false
+                setVolume(1.0f, 1.0f)
+                start()
+                setOnCompletionListener {
+                    it.release()
+                }
             }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
-
 }
