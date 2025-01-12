@@ -49,7 +49,9 @@
 ## Game Screens
 **Start Screen**
 ![Game Start Screen](https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/start%20screen%20.jpg?raw=true)
-![Gameplay Screen](URL_TO_GAMEPLAY_IMAGE)
-![High Scores Screen](URL_TO_HIGH_SCORES_IMAGE)
+**Game Screen**
+![Gameplay Screen](https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/game%20screen.jpg?raw=true)
+**Scores And Map Screen**
+![High Scores Screen](https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/score%20and%20map%20screen.jpg?raw=true)
 
 Author: [Ben-Aharoni](https://github.com/Ben-Aharoni)
