@@ -48,15 +48,15 @@
 
 ## Game Screens
 
-**1.Menu Screen**
+**1. Menu Screen**
 
 <img src="https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/start%20screen%20.jpg?raw=true" width="350" alt="Game Start Screen">
 
-**2.Game Screen**
+**2. Game Screen**
 
 <img src="https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/game%20screen.jpg?raw=true" width="350" alt="Gameplay Screen">
 
-**3.Scores And Map Screen**
+**3. Scores And Map Screen**
 
 <img src="https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/score%20and%20map%20screen.jpg?raw=true" width="350" alt="High Scores Screen">
 
