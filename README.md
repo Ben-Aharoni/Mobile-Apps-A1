@@ -3,12 +3,12 @@
 **Welcome to My Game!** This is an Android application built with Android Studio featuring a dodging game.
 
 ## Table of Contents
-- [App Overview](#appoverview)
+- [App Overview](#app-overview)
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
-  - [How To Install](#howtoinstall)
-- [Game Screens](#gamescreens)
+  - [How To Install](#how-to-install)
+- [Game Screens](#game-screens)
 
 ## App Overview
 **Cops And Robbers** is a game-based Android application where players collect coins and avoid cops. It also features a high-score system that integrates with Google Maps to show where each score was achieved.
