@@ -34,25 +34,19 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
-        val defaultLocation = LatLng(32.084932,34.835226)
+        val defaultLocation = LatLng(32.084932, 34.835226)
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 10f))
     }
 
     fun placeMarkerAndZoom(lat: Double, lon: Double, title: String) {
         if (::googleMap.isInitialized) {
-            // If you want only one marker at a time, clear the map first:
-            googleMap.clear()
-
             val position = LatLng(lat, lon)
 
-            // Place a marker
             googleMap.addMarker(
                 MarkerOptions()
                     .position(position)
                     .title(title)
             )
-
-            // Zoom the camera
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 14f))
         }
     }

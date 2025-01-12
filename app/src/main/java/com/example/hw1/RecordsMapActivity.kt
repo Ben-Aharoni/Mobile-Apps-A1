@@ -28,11 +28,9 @@ class RecordsMapActivity : AppCompatActivity(), LocationUpdatedCallback {
     private lateinit var locationDetector: LocationDetector
 
     private var currentScore: Int = 0
-
     private var currentLat: Double = 0.0
-
     private var currentLon: Double = 0.0
-
+    private var locationReceived = false
     private val LOCATION_PERMISSION_REQUEST_CODE = 1001
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +41,7 @@ class RecordsMapActivity : AppCompatActivity(), LocationUpdatedCallback {
         initViews()
         locationDetector = LocationDetector(this, this)
         checkLocationPermission()
-        loadScoreFromIntent()
+
     }
 
     private fun findViews() {
@@ -72,30 +70,30 @@ class RecordsMapActivity : AppCompatActivity(), LocationUpdatedCallback {
 
     override fun onResume() {
         super.onResume()
-        loadScoreFromIntent()
-        addScore()
         highScoreFragment.updateScore()
+        loadScoreFromIntent()
     }
-
 
     private fun loadScoreFromIntent() {
         val bundle = intent.extras ?: return
         currentScore = bundle.getInt("Score", 0)
-        currentLat = bundle.getDouble("Lat", 0.0)
-        currentLon = bundle.getDouble("Lon", 0.0)
-        if (currentLat != 0.0 && currentLon != 0.0) {
+
+        if (locationReceived) {
             addScore()
+        } else {
+            Toast.makeText(this, "Waiting for location...", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun addScore() {
         if (currentScore == 0) return
-
-        val lat = currentLat
-        val lon = currentLon
+        if (currentLat == 0.0 || currentLon == 0.0) {
+            Toast.makeText(this, "Location not available yet.", Toast.LENGTH_SHORT).show()
+            return
+        }
         val scores = ScoreManager.getInstance(this).scores
         if (scores.size < 10 || currentScore > scores.last().score) {
-            val newScore = Score(currentScore, lat, lon)
+            val newScore = Score(currentScore, currentLat, currentLon)
             ScoreManager.getInstance(this).updateScore(newScore)
             highScoreFragment.updateScore()
         }
@@ -105,6 +103,10 @@ class RecordsMapActivity : AppCompatActivity(), LocationUpdatedCallback {
     override fun onLocationUpdated(latitude: Double, longitude: Double) {
         currentLat = latitude
         currentLon = longitude
+        locationReceived = true
+        if (currentScore != 0) {
+            addScore()
+        }
     }
 
     private fun checkLocationPermission() {
@@ -133,7 +135,7 @@ class RecordsMapActivity : AppCompatActivity(), LocationUpdatedCallback {
             } else {
                 Toast.makeText(
                     this,
-                    "Location permission is required to show score locations on the map.",
+                    "Location permission is required to save score locations.",
                     Toast.LENGTH_LONG
                 ).show()
             }

@@ -40,7 +40,6 @@ class HighScoreFragment : Fragment() {
         return v
     }
 
-
     private fun initViews(context: Context?) {
         if (context == null) {
             return

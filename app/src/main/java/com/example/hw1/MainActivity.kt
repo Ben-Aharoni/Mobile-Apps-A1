@@ -35,10 +35,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var scoreManager: ScoreManager
 
-    private var currentLat: Double = 34.83639
-
-    private var currentLon: Double = 32.08556
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -200,7 +196,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun initViews() {
         main_LBL_score.text = gameManager.score.toString()
 
@@ -262,8 +257,6 @@ class MainActivity : AppCompatActivity() {
     fun handleGameOver(finalScore: Int) {
         val intent = Intent(this, RecordsMapActivity::class.java)
         intent.putExtra("Score", finalScore)
-        //intent.putExtra("Lat", currentLat)
-        //intent.putExtra("Lon", currentLon)
         startActivity(intent)
         finish()
     }

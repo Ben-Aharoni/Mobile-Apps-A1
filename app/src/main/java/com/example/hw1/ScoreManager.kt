@@ -1,7 +1,6 @@
 package com.example.hw1
 
 import android.content.Context
-import com.example.hw1.adapters.ScoreAdapter
 import com.example.hw1.model.Score
 import com.google.gson.Gson
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken

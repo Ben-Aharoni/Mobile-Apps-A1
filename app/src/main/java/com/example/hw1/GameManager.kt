@@ -1,14 +1,11 @@
 package com.example.hw1
 
 import android.content.Context
-import android.content.Intent
-import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.content.ContextCompat.startActivity
 import com.example.hw1.utilities.SignalManager
 import com.example.hw1.utilities.SingleSoundPlayer
 import kotlin.random.Random
