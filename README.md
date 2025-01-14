@@ -54,7 +54,7 @@
 
 **2. Game Screen**
 
-<img src="https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/game%20screen.jpg?raw=true" width="350" alt="Gameplay Screen">
+<img src="https://github.com/Ben-Aharoni/Mobile-Apps-A1/blob/master/images/game%20screenshot.jpg?raw=true" width="350" alt="Gameplay Screen">
 
 **3. Scores And Map Screen**
 
